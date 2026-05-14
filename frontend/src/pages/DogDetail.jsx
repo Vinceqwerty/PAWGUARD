@@ -1,0 +1,1 @@
+// DogDetail page placeholder
