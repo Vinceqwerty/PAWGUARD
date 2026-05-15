@@ -29,7 +29,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         )
         verify_url = f"http://localhost:8000/api/accounts/verify-email/{token}/"
         send_mail(
-            subject='Verify your PawTrack account',
+            subject='Verify your PawGuard account',
             message=f'Hi {user.first_name},\n\nVerify here:\n{verify_url}',
             from_email='noreply@pawtrack.com',
             recipient_list=[user.email],
