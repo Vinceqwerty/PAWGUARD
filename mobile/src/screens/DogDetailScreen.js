@@ -14,10 +14,10 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { useNavigation } from '@react-navigation/native';
 
 
-export default function DogDetailScreen() {
+export default function DogDetailScreen({route}) {
     
-    const navigation = useNavigation();
-  const { dogId } = route.params;
+  const navigation = useNavigation();
+  const { dogId = null, dog: existingDog = null } = route.params ?? {};
   const { user } = useAuth();
   const [dog, setDog] = useState(null);
   const [loading, setLoading] = useState(true);
