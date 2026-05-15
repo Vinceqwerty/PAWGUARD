@@ -27,7 +27,7 @@ export default function Login() {
 
   return (
     <div style={{ maxWidth: 400, margin: '60px auto', padding: 30, border: '1px solid #ddd', borderRadius: 8 }}>
-      <h2>🐾 PawTrack Login</h2>
+      <h2>🐾 PawGuard Login</h2>
       {error && <p style={{ color: 'red' }}>{error}</p>}
       <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
         <input name="email" type="email" placeholder="Email"

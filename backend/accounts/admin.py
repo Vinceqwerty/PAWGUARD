@@ -8,5 +8,5 @@ class CustomUserAdmin(UserAdmin):
     list_display = ['email', 'first_name', 'last_name', 'role', 'is_email_verified', 'is_active']
     list_filter  = ['role', 'is_email_verified', 'is_active']
     fieldsets = UserAdmin.fieldsets + (
-        ('PawTrack', {'fields': ('role', 'is_email_verified', 'phone_number')}),
+        ('PawGuard', {'fields': ('role', 'is_email_verified', 'phone_number')}),
     )
