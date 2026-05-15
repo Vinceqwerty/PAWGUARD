@@ -12,7 +12,7 @@ export default function Navbar() {
   return (
     <nav style={{ background:'#1e3a5f', color:'#fff', padding:'12px 24px',
       display:'flex', alignItems:'center', gap:24 }}>
-      <span style={{ fontWeight:700, fontSize:18 }}>🐾 PawTrack</span>
+      <span style={{ fontWeight:700, fontSize:18 }}>🐾 PawGuard</span>
       <Link to="/dashboard"    style={nl}>Dashboard</Link>
       <Link to="/dogs"         style={nl}>Dogs</Link>
       {user.role === 'admin' && <Link to="/admin/users" style={nl}>Manage Users</Link>}

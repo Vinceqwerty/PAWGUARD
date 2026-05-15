@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost:8000/api';
+const BASE_URL = 'https://studious-dollop-7vj6rwrx7vr73xpgv-8000.app.github.dev/api';
 
 // ── Token helpers ─────────────────────────────────────────────────────────────
 export const getAccessToken  = () => localStorage.getItem('access');

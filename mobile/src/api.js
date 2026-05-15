@@ -3,7 +3,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 // Android emulator: 10.0.2.2
 // iOS simulator: localhost
 // Physical device: YOUR_COMPUTER_IP (e.g., 192.168.1.100)
-const BASE_URL = 'https://fantastic-eureka-5g9qqgqrxx443jgv-8000.app.github.dev/api';
+const BASE_URL = 'https://studious-dollop-7vj6rwrx7vr73xpgv-8000.app.github.dev/api';
 
 // ── Storage Keys ─────────────────────────────────────────────────────────────
 const ACCESS_TOKEN_KEY = '@pawtrack_access_token';
