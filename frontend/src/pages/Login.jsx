@@ -62,123 +62,22 @@ export default function Login() {
   };
 
   return (
-    <div style={styles.container}>
-      <div style={styles.card}>
-        <div style={styles.header}>
-          <div style={styles.icon}>🐾</div>
-          <h2 style={styles.title}>Welcome Back to PawGuard</h2>
-          <p style={styles.subtitle}>Sign in to manage your pet's safety</p>
-        </div>
-
-        {error && (
-          <div style={styles.errorContainer}>
-            <span style={styles.errorIcon}>⚠️</span>
-            <span style={styles.errorText}>{error}</span>
-            <button onClick={() => setError('')} style={styles.errorClose}>×</button>
-          </div>
-        )}
-
-        <form onSubmit={handleSubmit} style={styles.form}>
-          <div style={styles.inputGroup}>
-            <label style={styles.label}>
-              Email Address
-              <span style={styles.required}>*</span>
-            </label>
-            <div style={styles.inputWrapper}>
-              <span style={styles.inputIcon}>📧</span>
-              <input
-                name="email"
-                type="email"
-                placeholder="you@example.com"
-                value={form.email}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                required
-                disabled={loading}
-                style={{
-                  ...styles.input,
-                  ...(getInputError('email') && styles.inputError)
-                }}
-              />
-            </div>
-            {getInputError('email') && (
-              <div style={styles.fieldError}>{getInputError('email')}</div>
-            )}
-          </div>
-
-          <div style={styles.inputGroup}>
-            <label style={styles.label}>
-              Password
-              <span style={styles.required}>*</span>
-            </label>
-            <div style={styles.inputWrapper}>
-              <span style={styles.inputIcon}>🔒</span>
-              <input
-                name="password"
-                type={showPassword ? 'text' : 'password'}
-                placeholder="Enter your password"
-                value={form.password}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                required
-                disabled={loading}
-                style={{
-                  ...styles.input,
-                  ...(getInputError('password') && styles.inputError)
-                }}
-              />
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                style={styles.passwordToggle}
-              >
-                {showPassword ? '👁️' : '👁️‍🗨️'}
-              </button>
-            </div>
-            {getInputError('password') && (
-              <div style={styles.fieldError}>{getInputError('password')}</div>
-            )}
-          </div>
-
-          <button
-            type="submit"
-            disabled={loading}
-            style={{
-              ...styles.submitButton,
-              ...(loading && styles.submitButtonDisabled)
-            }}
-          >
-            {loading ? (
-              <>
-                <span style={styles.spinner}></span>
-                Signing in...
-              </>
-            ) : (
-              'Sign In'
-            )}
-          </button>
-        </form>
-
-        <div style={styles.divider}>
-          <span style={styles.dividerLine}></span>
-          <span style={styles.dividerText}>or continue with</span>
-          <span style={styles.dividerLine}></span>
-        </div>
-
-        <div style={styles.socialButtons}>
-          <button style={styles.socialButton}>
-            <span style={styles.socialIcon}>G</span>
-            Google
-          </button>
-        </div>
-
-        <p style={styles.registerText}>
-          Don't have an account?{' '}
-          <Link to="/register" style={styles.registerLink}>
-            Create an account
-          </Link>
-        </p>
-      </div>
+    <div style={{ maxWidth: 400, margin: '60px auto', padding: 30, border: '1px solid #ddd', borderRadius: 8 }}>
+      <h2>🐾 PawGuard Login</h2>
+      {error && <p style={{ color: 'red' }}>{error}</p>}
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <input name="email" type="email" placeholder="Email"
+          value={form.email} onChange={handleChange} required
+          style={{ padding: '10px 12px', border: '1px solid #ccc', borderRadius: 6 }} />
+        <input name="password" type="password" placeholder="Password"
+          value={form.password} onChange={handleChange} required
+          style={{ padding: '10px 12px', border: '1px solid #ccc', borderRadius: 6 }} />
+        <button type="submit" disabled={loading}
+          style={{ padding: 10, background: '#2563eb', color: '#fff', border: 'none', borderRadius: 6, cursor: 'pointer' }}>
+          {loading ? 'Logging in...' : 'Login'}
+        </button>
+      </form>
+      <p>No account? <Link to="/register">Register</Link></p>
     </div>
   );
 }

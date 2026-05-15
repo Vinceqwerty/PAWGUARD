@@ -6,9 +6,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const BASE_URL = 'https://studious-dollop-7vj6rwrx7vr73xpgv-8000.app.github.dev/api';
 
 // ── Storage Keys ─────────────────────────────────────────────────────────────
-const ACCESS_TOKEN_KEY = '@pawtrack_access_token';
-const REFRESH_TOKEN_KEY = '@pawtrack_refresh_token';
-const USER_KEY = '@pawtrack_user';
+const ACCESS_TOKEN_KEY = '@pawguard_access_token';
+const REFRESH_TOKEN_KEY = '@pawguard_refresh_token';
+const USER_KEY = '@pawguard_user';
 
 // ── Token Helpers ────────────────────────────────────────────────────────────
 export const getAccessToken = async () => await AsyncStorage.getItem(ACCESS_TOKEN_KEY);
